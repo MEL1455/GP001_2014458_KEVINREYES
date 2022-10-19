@@ -1,0 +1,152 @@
+# GP001_2014458_KEVINREYES
+
+#include <iostream>
+
+using namespace std;
+
+struct agregar
+{
+                   int numart, ano, preciou; 
+                   float total;
+                   string clas, desc, nomart, caract, gen;
+};
+
+
+int main()
+{
+    agregar aagregar[3];
+    
+    int op1, op2, op3, op4, condicion;//Menú
+    cout<<" \t *Mel VideoGames Store* \n";
+    cout<<"Elige unas de las siguentes opciones \n";
+    cout<<"1.Agregar Articulo \n";
+    cout<<"2.Modificar Articulo \n";
+    cout<<"3.Eliminar Articulo \n";
+    cout<<"4.Lista de Articulos Vigentes \n";
+    cout<<"5.Limpiar Pantalla \n";
+    cout<<"6.Salir \n";
+    cin>> op1;
+
+    switch(op1)
+       {
+           case 1://Agregar Articulo(s)
+           {
+               for (int i=0; i<3; i++)
+               {
+                   cout<<"Agregar Nombre del Videojuego\n";
+                   cin>> aagregar[i].nomart;
+                   
+                   cout<<"Agregar Numero del Articulo\n";
+                   cin>> aagregar[i].numart;
+                   
+                   cout<<"Agregar Ano del Lanzamiento\n";
+                   cin>> aagregar[i].ano;
+                   
+                   cout<<"Agregar Clasificacion\n";
+                   cin.ignore();
+                   getline(cin, aagregar[i].clas);
+                   
+                   cout<<"Agregar Descripcion\n";
+                   cin.ignore();
+                   getline(cin, aagregar[i].desc);
+                   
+                   cout<<"Agregar Caracteristicas\n";
+                   cin.ignore();
+                   getline(cin, aagregar[i].caract);
+                   
+                   cout<<"Agregar Genero\n";
+                   cin>> aagregar[i].gen; 
+                   
+                   cout<<"Precio Unitario\n";
+                   cin>> aagregar[i].preciou;
+                   
+                   cout<<"Su total con el Iva es:\n";
+                   aagregar[i].total = (aagregar[i].preciou*0.16) + aagregar[i].preciou;
+                   cout << aagregar[i].total << endl;
+               }
+               cout << "Se alcanzo el maximo de registros";
+           } 
+           return main();
+           break;
+
+           case 2://Modificar Articulo(s)
+           {
+           cout<<"Que desearia modificar \n";
+           }
+           break;
+           case 3://Eliminar Articulo(s)
+           {
+           cout<<"Que Articulo desearia eliminar \n";
+           }
+           break;
+
+           case 4://Lista de Videojuegos
+           {
+           cout<<"Aqui tienes la lista de videojuegos\n";
+           
+           for(int i =0; i<3;i++)
+           {
+                   cout<<"Nombre del Videojuego"<< aagregar[i].nomart <<endl;
+                   
+                   cout<<"Numero del Articulo"<< aagregar[i].numart <<endl;
+
+                   cout<<"Ano del Lanzamiento"<< aagregar[i].ano <<endl;
+                   
+                   cout<<"Clasificacion"<< aagregar[i].clas <<endl;
+                   
+                   cout<<"Descripcion"<< aagregar[i].desc <<endl;
+                   
+                   cout<<"Caracteristicas"<< aagregar[i].caract <<endl;
+                   
+                   cout<<"Genero"<< aagregar[i].gen <<endl;
+                   
+                   cout<<"Precio Unitario"<< aagregar[i].preciou <<endl;
+                   
+                   cout<<"Su total con el Iva es:"<< aagregar[i].total <<endl;
+           }
+           
+           }
+           return main();
+           break;
+
+           case 5://Limpiar Pantalla
+           {
+            cout<<"¿Estas seguro de desear Limpiar la pantalla? \n";
+            cout<<"1.Si \n";
+            cout<<"2.No \n";
+                    cin>>op3;
+                if(op3==1)
+                {
+                    system("clear"); 
+                    return main();
+                }  
+                else
+                {
+                    return main();
+                }
+           }
+                break;
+
+           case 6://Salir
+           {
+            cout<<"¿Estas seguro de querer salir ? \n";
+            cout<<"1.Si \n";
+            cout<<"2.No \n";
+            cin>> op3;
+            if(op3==1)
+            {
+                cout<<"Gracias por Usarme, Lindo Dia/Tarde/Noche:)\n";
+               return 0; 
+            }
+            else
+            {
+                system("clear"); 
+                return main();
+            }
+           }
+            break;
+
+       }
+
+    return 0;
+}
